@@ -1,2 +1,1 @@
-# iridiumpy
-Language of programing based on Python
+# IridiumPy - это язык программирвоания базированный на Python, использующий Python для запуска!!!
