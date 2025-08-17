@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IridiumPY Documentation</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+    }
+    header {
+        background-color: #1e1e2f;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    nav {
+        background-color: #27293d;
+        padding: 10px 0;
+        text-align: center;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+    }
+    nav a:hover {
+        text-decoration: underline;
+    }
+    .container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 20px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    h2 {
+        color: #1e1e2f;
+        margin-top: 30px;
+    }
+    pre {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    code {
+        font-family: Consolas, monospace;
+    }
+    .btn {
+        display: inline-block;
+        background-color: #1e88e5;
+        color: white;
+        padding: 10px 20px;
+        margin: 10px 5px 20px 0;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .btn:hover {
+        background-color: #1565c0;
+    }
+    footer {
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 30px;
+        background-color: #1e1e2f;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>IridiumPY Documentation</h1>
+</header>
+
+<nav>
+    <a href="#intro">Введение</a>
+    <a href="#syntax">Синтаксис</a>
+    <a href="#examples">Примеры</a>
+    <a href="#exe">Сборка .exe</a>
+    <a href="#advanced">Расширенные возможности</a>
+</nav>
+
+<div class="container" id="intro">
+    <h2>1. Введение</h2>
+    <p>IridiumPY — интерпретируемый язык программирования с простым синтаксисом, вдохновлённым Python. Он позволяет писать скрипты с минимальными конструкциями, но использовать мощь Python через встроенные команды.</p>
+    <ul>
+        <li>Расширение файлов: <b>.ird</b></li>
+        <li>Основные возможности: переменные, условные конструкции, ввод/вывод, Python-библиотеки</li>
+        <li>Комментарии: <code>//</code> для однострочных, <code>/* ... */</code> для многострочных</li>
+    </ul>
+
+    <a href="#" class="btn">Скачать Setup</a>
+    <a href="https://github.com/i114rk/iridiumpy" target="_blank" class="btn">Исходники на GitHub</a>
+</div>
+
+<div class="container" id="syntax">
+    <h2>2. Синтаксис языка</h2>
+
+    <h3>2.1 Переменные и типы</h3>
+    <pre><code>a = 10           // число
+b = 3.14         // float
+name = "Alice"   // строка
+list = [1,2,3]   // список
+dict = {a: 1, b: 2} // словарь
+</code></pre>
+
+    <h3>2.2 Ввод и вывод</h3>
+    <pre><code>println("Hello")           // вывод с переносом строки
+print("Hello")             // вывод без переноса
+age = coninp("Your age: ") // ввод пользователя
+</code></pre>
+
+    <h3>2.3 Условные конструкции</h3>
+    <pre><code>if age &lt; 14 {
+    println("Too young!")
+}
+elif age &gt; 14 {
+    println("Good, your age is ")
+    print(in"{age}")
+}
+else {
+    println("Exactly 14!")
+}
+</code></pre>
+
+    <h3>2.4 Работа с Python-библиотеками</h3>
+    <pre><code>pyuse "time"           // импорт библиотеки
+pycode&gt;&gt; time.sleep(1) // выполнение Python-кода
+py{time}.sleep(1)      // вызов Python функции
+</code></pre>
+</div>
+
+<div class="container" id="examples">
+    <h2>3. Примеры</h2>
+
+    <h3>3.1 Hello World</h3>
+    <pre><code>println("Hello, world!")</code></pre>
+
+    <h3>3.2 Ввод возраста</h3>
+    <pre><code>age = int(coninp("Your age: "))
+if age &gt;= 18 {
+    println("Adult")
+}
+else {
+    println("Minor")
+}
+</code></pre>
+
+    <h3>3.3 Использование Python-библиотеки</h3>
+    <pre><code>pyuse "time"
+
+println("Wait 2 seconds...")
+pycode&gt;&gt; time.sleep(2)
+println("Done!")
+</code></pre>
+</div>
+
+<div class="container" id="exe">
+    <h2>4. Сборка .exe (Windows)</h2>
+
+    <h3>4.1 Трансляция и сборка</h3>
+    <pre><code>iridium_translate file.ird file.py
+pyinstaller --onefile --console file.py
+</code></pre>
+    <ul>
+        <li><b>--onefile</b> — один .exe файл</li>
+        <li><b>--console</b> — вывод программы в терминал</li>
+    </ul>
+
+    <h3>4.2 Запуск .exe</h3>
+    <pre><code>.\dist\file.exe</code></pre>
+    <p>Через двойной клик консоль откроется и закроется после выполнения. Чтобы окно не закрывалось:</p>
+    <pre><code>pycode&gt;&gt; input("Press Enter to exit...")</code></pre>
+</div>
+
+<div class="container" id="advanced">
+    <h2>5. Расширенные возможности языка</h2>
+    <ul>
+        <li>Работа со списками и словарями</li>
+        <li>Циклы <code>for</code> и <code>while</code></li>
+        <li>Встроенные Python функции через <code>pycode&gt;&gt;</code></li>
+        <li>F-строки для форматированного вывода</li>
+        <li>Многострочные выражения через блоки <code>{}</code> и автоматическая табуляция</li>
+    </ul>
+</div>
+
+<footer>
+    &copy; 2025 IridiumPY | <a href="https://github.com/i114rk/iridiumpy" target="_blank" style="color:#fff; text-decoration:underline;">GitHub</a>
+</footer>
+
+</body>
+</html>
